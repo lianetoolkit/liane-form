@@ -7,7 +7,7 @@ Embed Liane Forms
 ## Installation
 
 ```
-$ npm install --save liane-form
+$ npm install --save @lianetoolkit/form
 ```
 
 ## Usage
