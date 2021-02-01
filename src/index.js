@@ -21,7 +21,7 @@ import { iframeResize } from "iframe-resizer";
       const nonSecure = !!container.getAttribute("data-allowNonSecure");
       if (validateURL(server, nonSecure)) {
         const iframe = document.createElement("iframe");
-        const url = `${server}/f/?c=${campaignId}`;
+        const url = `${server.replace(/\/$/, "")}/f/?c=${campaignId}`;
         container.appendChild(iframe);
         iframe.setAttribute("style", `min-width: 400px; width: 100%;`);
         iframe.setAttribute("src", url);
