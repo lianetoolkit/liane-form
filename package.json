@@ -1,6 +1,6 @@
 {
   "name": "@lianetoolkit/form",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Embed Liane Forms",
   "main": "lib/liane-form.js",
   "directories": {

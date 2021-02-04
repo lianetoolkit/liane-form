@@ -26,7 +26,22 @@ import { iframeResize } from "iframe-resizer";
         iframe.setAttribute("style", `min-width: 400px; width: 100%;`);
         iframe.setAttribute("src", url);
         iframe.setAttribute("frameborder", 0);
-        iframeResize({}, iframe);
+        iframeResize(
+          {
+            onMessage: function (data) {
+              if (data.message) {
+                const message = data.message;
+                if (message.redirect) {
+                  window.location = message.redirect;
+                }
+                if (message.sent) {
+                  data.iframe.scrollIntoView();
+                }
+              }
+            },
+          },
+          iframe
+        );
       }
     }
   };
